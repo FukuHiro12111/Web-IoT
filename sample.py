@@ -41,9 +41,9 @@ def line_notify_post():
     requests.post(line_notify_api, data=payload, headers=headers, files=files)
 
 # カメラ撮影
-def camera_func():
+def camera_func(x):
     if GPIO.input(gpio_sw) == 0:
-        filename = ("in_fridge") + ".jpeg"
+        filename = ("in_fridge") + ".jpg"
         save_dir_filename = CAM_DIR + filename
         GPIO.output(gpio_led, 1)
         time.sleep(2)
