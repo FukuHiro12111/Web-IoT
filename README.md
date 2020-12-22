@@ -25,5 +25,5 @@ sudo apt-get install libjasper-dev
 sudo pip3 --default-timeout=1000 install opencv-python
 
 ＃schdule
-pip3 install schedule
+sudo pip3 install schedule
 ```
