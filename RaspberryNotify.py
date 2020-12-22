@@ -27,7 +27,7 @@ def line_notify_post():
     line_notify_token = "自分のトークンID"
     # LINE Notify APIのURL
     line_notify_api = "https://notify-api.line.me/api/notify"
-    # Notify URL
+    # Bearer認証
     headers = {'Authorization': 'Bearer ' + line_notify_token}
 
     # 画像の読み込み
