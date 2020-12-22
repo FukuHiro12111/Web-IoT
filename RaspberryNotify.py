@@ -48,7 +48,6 @@ def camera_func(x):
         time.sleep(2)
         ret, frame = cap.read()
         cv.imwrite(os.path.join(CAM_DIR, filename), frame)
-
         GPIO.output(gpio_led, 0)
 
 GPIO.add_event_detect(gpio_sw, GPIO.FALLING, callback=camera_func)
