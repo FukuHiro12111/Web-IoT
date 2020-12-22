@@ -3,7 +3,7 @@
 Web×IoTハッカソンにて作成  
 <br>
 ## 必要な材料
-Raspberry Pi Zero W, SDカード, リードスイッチ, LED, USBカメラ, ブレッドボード, ジャンパー線, 抵抗(必要であれば)   
+Raspberry Pi Zero W, SDカード, リードスイッチ, 磁石, LED, USBカメラまたはカメラモジュール, ブレッドボード, ジャンパー線, 抵抗(必要であれば)   
 <br>
 
 ## システム概要
@@ -15,7 +15,7 @@ Raspberry Pi Zero W, SDカード, リードスイッチ, LED, USBカメラ, ブ�
 カメラのところはカメラモジュールでもUSBカメラでも良い  
 <br>
 
-- 必要なライブラリをインストール
+- ___必要なライブラリをインストール___
 ```
 ＃OpenCV
 sudo apt-get install libhdf5-dev libhdf5-serial-dev libhdf5-100
