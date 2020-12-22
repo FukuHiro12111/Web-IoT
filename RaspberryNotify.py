@@ -12,7 +12,7 @@ import RPi.GPIO as GPIO
 gpio_led = 17
 gpio_sw = 26
 # GPIO指定します
-# GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 # チャンネルを設定します
 GPIO.setup(gpio_sw,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(gpio_led,GPIO.OUT)
@@ -52,7 +52,7 @@ def camera_func(x):
         GPIO.output(gpio_led, 0)
 
 GPIO.add_event_detect(gpio_sw, GPIO.FALLING, callback=camera_func)
-times = ["01:38", "01:39"]
+times = ["09:00", "17:30"] # 何時にしても良い
 schedule.every().day.at(times[0]).do(line_notify_post)
 schedule.every().day.at(times[1]).do(line_notify_post)
 try:
