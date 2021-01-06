@@ -18,7 +18,7 @@ GPIO.setup(gpio_sw,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(gpio_led,GPIO.OUT)
 
 # 画像が保存されるパス
-CAM_DIR ="/home/pi/Web-IoT-/"
+CAM_DIR =""
 
 
 def line_notify_post():
