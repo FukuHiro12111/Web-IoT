@@ -49,15 +49,21 @@ def camera_func(x):
         ret, frame = cap.read()
         cv.imwrite(os.path.join(CAM_DIR, filename), frame)
         GPIO.output(gpio_led, 0)
+        
+def main():
+    GPIO.add_event_detect(gpio_sw, GPIO.FALLING, callback=camera_func)
+    times = ["09:00", "17:30"] # 何時にしても良い
+    schedule.every().day.at(times[0]).do(line_notify_post)
+    schedule.every().day.at(times[1]).do(line_notify_post)
+    try:
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
 
-GPIO.add_event_detect(gpio_sw, GPIO.FALLING, callback=camera_func)
-times = ["09:00", "17:30"] # 何時にしても良い
-schedule.every().day.at(times[0]).do(line_notify_post)
-schedule.every().day.at(times[1]).do(line_notify_post)
-try:
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    except KeyboardInterrupt:
+        GPIO.cleanup()
 
-except KeyboardInterrupt:
-    GPIO.cleanup()
+if __name__=='__main__':
+    main()
+    
+
